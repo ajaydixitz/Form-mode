@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "6489720938c54eea1a723ef4"
+  },
+  "countrycode": "91",
+  "countryname": "india"
+},{
+  "_id": {
+    "$oid": "6489727e38c54eea1a723ef5"
+  },
+  "countrycode": "1",
+  "countryname": "USA"
+}]

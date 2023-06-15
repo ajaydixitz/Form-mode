@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Form-Register</title>
+    <style>
+        .container{
+            display: block;
+            margin: auto;
+            width: 700px;
+            background-color:rgba(40, 207, 210, 0.874);
+            box-sizing: border-box;
+            border-radius: 3%;
+            text-align: center;
+        }
+        #btn{
+            width: 100px;
+            height: 40px;
+            background-color: rgb(0, 204, 255);
+            margin: auto;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h3>Fill the form</h3>
+    <form action="/post" method="post">
+        <h2>First Name: <input type="text" pattern="[A-Za-z]+" name="fname"></h2>
+        <h2>Last Name: <input type="text" pattern="[A-Za-z]+" name="lname"></h2>
+        <h2>email : <input type="email"  name="email"> </h2>
+       <h2> country: <select name="country" id="country"  onchange="changestate()">
+            <option value="">select country</option>
+            <% for(i=0;i< country.length;i++) {%>
+            <option value="<%- country[i].countryname %>" id=""><%- country[i].countryname %> </option>
+            <% } %>
+            
+        </select>
+        </h2>
+        <h2>State:
+        <select name="state" id="state" onchange="changecity()">
+            <option value="">select states</option>
+        </select>
+        </h2>
+        <h2>
+        City:
+        <select name="city" id="city">
+            <option value="">select states</option>
+        </select>
+    </h2>
+    <h2>Gender: <hr>
+        male <input type="radio" name="gender" value="male" > female <input type="radio" name="gender" value="female" required>  </h2>
+    <h2>DOB:  <input type="date" name="date" id="dob" onchange="calculateage()"></h2>
+    <h2>Age: <input type="number" name="age" id="age" readonly required> </h2>
+    
+        <button type="submit" id="btn">save</button>
+
+    </form>
+    </div>
+    <script>
+        var states = JSON.parse('<%- states %>');
+        var city = JSON.parse('<%- city %>');
+
+        
+        function changestate(){
+            
+        const selectcountry=document.getElementById('country');
+        const selectstate=document.getElementById('state');
+        const countryname=selectcountry.value;
+        
+        selectstate.innerHTML="";
+        var emptyoption=document.createElement('option')
+        emptyoption.value="";
+        emptyoption.text="Select state";
+        selectstate.add(emptyoption);
+        
+        const filterstate= states.filter(function(state){
+            return state.countryname==countryname;
+        });
+        for(var i=0;i<filterstate.length;i++){
+            var option=document.createElement('option');
+            option.text=filterstate[i].statename;
+            option.value=filterstate[i].statename;
+            selectstate.add(option);
+        }
+        }
+        function changecity(){
+            
+            const picstate=document.getElementById('state');
+            const selectcity=document.getElementById('city');
+            const statename=picstate.value;
+            
+            selectcity.innerHTML="";
+            var emptyoption=document.createElement('option')
+            emptyoption.value="";
+            emptyoption.text="Select city";
+            selectcity.add(emptyoption);
+            
+            const filtercity= city.filter(function(cityobj){
+                return cityobj.statename==statename;
+            });
+            for(var i=0;i<filtercity.length;i++){
+                var option=document.createElement('option');
+                option.text=filtercity[i].cityname;
+                option.value=filtercity[i].cityname;
+                selectcity.add(option);
+            }
+            }
+            function calculateage() {
+    var dobinput = document.getElementById('dob');
+    var ageinput = document.getElementById('age');
+
+    var dob = new Date(dobinput.value);
+    var today = new Date();
+
+    var ageinmilliseconds = today - dob;
+    var ageinyears = Math.floor(ageinmilliseconds / (1000 * 60 * 60 * 24 * 365));
+if(ageinyears>=14){
+    ageinput.value = ageinyears;
+
+}
+    else{
+        alert("date must be greater than 14");
+        ageinput.value="";
+    }
+
+    
+  }
+
+
+
+    </script> 
+</body>
+</html>

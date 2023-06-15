@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "6489a5b338c54eea1a723efe"
+  },
+  "statename": "Uttar pradesh",
+  "cityname": "kanpur"
+},{
+  "_id": {
+    "$oid": "6489a5e038c54eea1a723eff"
+  },
+  "statename": "punjab",
+  "cityname": "chandigarh"
+},{
+  "_id": {
+    "$oid": "6489a66738c54eea1a723f00"
+  },
+  "statename": "New York",
+  "cityname": "manhattan"
+},{
+  "_id": {
+    "$oid": "6489ac2838c54eea1a723f0e"
+  },
+  "statename": "bihar",
+  "cityname": "patna"
+},{
+  "_id": {
+    "$oid": "6489ac7538c54eea1a723f0f"
+  },
+  "statename": "Uttar pradesh",
+  "cityname": "lucknow"
+},{
+  "_id": {
+    "$oid": "6489acb138c54eea1a723f10"
+  },
+  "statename": "Uttar pradesh",
+  "cityname": "Agra"
+}]

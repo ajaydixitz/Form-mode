@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>welcome!!</h1>
+        <h2> your First Name : <%-user.Firstname%></h2>
+        <h2> your Last Name : <%-user.Lastname%></h2>
+        <h2> your Email :<%-user.email%></h2>
+        <h2> your Country :<%-user.country%></h2>
+        <h2> your State :<%-user.state%></h2>
+        <h2> your City  :<%-user.city%></h2>
+        <h2> your Gender: <%-user.gender%></h2>
+        <h2> your DOB :<%-user.dob.toISOString().slice(0, 10) %></h2>
+        <h2> your Age: <%-user.age%></h2>
+
+
+    </div>
+</body>
+</html>

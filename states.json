@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "64899f5d38c54eea1a723efb"
+  },
+  "countryname": "india",
+  "statename": "Uttar pradesh"
+},{
+  "_id": {
+    "$oid": "64899f9738c54eea1a723efc"
+  },
+  "countryname": "USA",
+  "statename": "New York"
+},{
+  "_id": {
+    "$oid": "6489abbc38c54eea1a723f08"
+  },
+  "countryname": "india",
+  "statename": "punjab"
+},{
+  "_id": {
+    "$oid": "6489abe638c54eea1a723f09"
+  },
+  "countryname": "india",
+  "statename": "bihar"
+}]
